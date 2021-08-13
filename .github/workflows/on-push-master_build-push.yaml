@@ -23,4 +23,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         registry: registry.infra.liskl.com
         tags: "latest,${{ env.RELEASE_VERSION }}"
-        buildargs: RELEASE_VERSION,BRANCH
+        buildargs: RELEASE_VERSION,BRANCH,ARCH,ALPINE_VERSION
+      env:
+        ARCH: x86_64
+        ALPINE_VERSION: 3.14.1
